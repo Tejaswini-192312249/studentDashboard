@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vercel *)",
+      "Bash(curl -s \"https://vmuqhkytzjwvbsfrbhiz.supabase.co/rest/v1/courses?select=*\" -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZtdXFoa3l0emp3dmJzZnJiaGl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkwNDc0MjksImV4cCI6MjA2NDYyMzQyOX0.Tbu8VM6wfchzLTFZBWu4Ka0YJxDkYo1VkzACt6bcex4\" -H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZtdXFoa3l0emp3dmJzZnJiaGl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkwNDc0MjksImV4cCI6MjA2NDYyMzQyOX0.Tbu8VM6wfchzLTFZBWu4Ka0YJxDkYo1VkzACt6bcex4\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://vmuqhkytzjwvbsfrbhiz.supabase.co/rest/v1/\")",
+      "Bash(start \"\" \"c:\\\\Users\\\\Hello\\\\OneDrive\\\\Desktop\\\\studentDashboard\\\\project-guide.html\")"
+    ]
+  }
+}

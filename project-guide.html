@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard – Interview Guide</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff;
+      color: #1a1a2e;
+      font-size: 14px;
+      line-height: 1.7;
+      padding: 40px;
+      max-width: 860px;
+      margin: auto;
+    }
+    h1 { font-size: 28px; color: #6d28d9; margin-bottom: 4px; }
+    h2 { font-size: 18px; color: #4c1d95; margin: 32px 0 10px; border-bottom: 2px solid #ede9fe; padding-bottom: 6px; }
+    h3 { font-size: 15px; color: #5b21b6; margin: 18px 0 6px; }
+    p { margin-bottom: 10px; color: #333; }
+    ul, ol { padding-left: 22px; margin-bottom: 12px; }
+    li { margin-bottom: 5px; }
+    .cover {
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 3px solid #6d28d9;
+      margin-bottom: 40px;
+    }
+    .cover h1 { font-size: 36px; margin-bottom: 8px; }
+    .cover p { font-size: 15px; color: #555; }
+    .cover .badge {
+      display: inline-block;
+      background: #6d28d9;
+      color: white;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 14px;
+    }
+    .highlight {
+      background: #f5f3ff;
+      border-left: 4px solid #6d28d9;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 12px 0;
+      background: #fafafa;
+    }
+    .card h3 { margin-top: 0; }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .tech-item {
+      border: 1px solid #ddd6fe;
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #fdf4ff;
+    }
+    .tech-item strong { color: #6d28d9; display: block; margin-bottom: 3px; font-size: 13px; }
+    .tech-item span { color: #555; font-size: 12.5px; }
+    .flow-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin: 10px 0;
+    }
+    .flow-num {
+      background: #6d28d9;
+      color: white;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      font-weight: bold;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .flow-content strong { display: block; color: #1a1a2e; }
+    .flow-content span { color: #555; font-size: 13px; }
+    .qa-block {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 12px 0;
+    }
+    .qa-block .q { font-weight: bold; color: #4c1d95; margin-bottom: 6px; }
+    .qa-block .a { color: #333; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+    th {
+      background: #6d28d9;
+      color: white;
+      padding: 9px 12px;
+      text-align: left;
+    }
+    td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; }
+    tr:nth-child(even) td { background: #f5f3ff; }
+    .page-break { page-break-before: always; }
+    .tag {
+      display: inline-block;
+      background: #ede9fe;
+      color: #5b21b6;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin: 2px;
+    }
+    .footer {
+      margin-top: 50px;
+      padding-top: 18px;
+      border-top: 1px solid #ddd;
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+    }
+    @media print {
+      body { padding: 20px; }
+      .page-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <h1>Student Learning Dashboard</h1>
+  <p>A complete project walkthrough for your technical interview</p>
+  <p style="margin-top:8px; color:#6d28d9; font-weight:bold;">Tejaswini Pagadala</p>
+  <span class="badge">Beginner-Friendly Guide · 2025</span>
+</div>
+
+<!-- 1. PROJECT OVERVIEW -->
+<h2>1. What Is This Project?</h2>
+<p>
+  The <strong>Student Learning Dashboard</strong> is a web application that helps a student (you!) track their learning progress.
+  It shows all your enrolled courses, how much of each course you have completed, your study activity, a weekly schedule, and your profile.
+</p>
+<div class="highlight">
+  <strong>One-line summary for interviews:</strong><br/>
+  "I built a full-stack student dashboard using Next.js and Supabase that lets users track course progress, view activity logs, manage schedules, and see project portfolios — deployed live on Vercel."
+</div>
+
+<h3>Live URL</h3>
+<p><strong>https://student-dashboard-murex-ten.vercel.app</strong></p>
+
+<h3>Pages in the App</h3>
+<table>
+  <tr><th>Page</th><th>What It Does</th></tr>
+  <tr><td>Dashboard (/)</td><td>Home screen — greeting, streak tracker, course cards, activity grid</td></tr>
+  <tr><td>Courses (/courses)</td><td>Full list of all enrolled courses with progress bars</td></tr>
+  <tr><td>Projects (/projects)</td><td>Portfolio of personal projects with tech stack and status</td></tr>
+  <tr><td>Progress (/progress)</td><td>Stats — total courses, completed, average progress, per-course breakdown</td></tr>
+  <tr><td>Schedule (/schedule)</td><td>Weekly study planner with sessions per day</td></tr>
+  <tr><td>Settings (/settings)</td><td>Profile info, preferences, notification toggles</td></tr>
+  <tr><td>Profile (/profile)</td><td>Avatar, stats, and full activity log timeline</td></tr>
+</table>
+
+<!-- 2. TECH STACK -->
+<div class="page-break"></div>
+<h2>2. Tech Stack — What Every Tool Does</h2>
+
+<div class="tech-grid">
+  <div class="tech-item">
+    <strong>Next.js 16 (App Router)</strong>
+    <span>The main framework. Handles routing (pages), server-side rendering, and the overall structure of the app. Think of it as the skeleton.</span>
+  </div>
+  <div class="tech-item">
+    <strong>React 19</strong>
+    <span>The JavaScript library used to build UI components (buttons, cards, grids). Next.js is built on top of React.</span>
+  </div>
+  <div class="tech-item">
+    <strong>TypeScript</strong>
+    <span>A stricter version of JavaScript that catches errors before the app runs. Defines shapes of data like what a "Course" object looks like.</span>
+  </div>
+  <div class="tech-item">
+    <strong>Tailwind CSS v4</strong>
+    <span>A CSS utility framework used for all styling — colours, spacing, responsive layout. No separate CSS files needed.</span>
+  </div>
+  <div class="tech-item">
+    <strong>Supabase</strong>
+    <span>The backend database (PostgreSQL). Stores all course data. Acts like a Google Sheet in the cloud that the app reads from.</span>
+  </div>
+  <div class="tech-item">
+    <strong>Framer Motion</strong>
+    <span>Animation library. Used for the bento grid entrance animations, progress bar fills, and hover effects on course cards.</span>
+  </div>
+  <div class="tech-item">
+    <strong>Lucide React</strong>
+    <span>Icon library — provides icons used in the sidebar (dashboard, book, chart, calendar, settings icons).</span>
+  </div>
+  <div class="tech-item">
+    <strong>Vercel</strong>
+    <span>The hosting platform. Deploys the app to the internet automatically whenever changes are pushed. It also manages environment variables securely.</span>
+  </div>
+</div>
+
+<h3>Simple Analogy</h3>
+<div class="highlight">
+  Think of it like building a house:<br/>
+  <strong>Next.js</strong> = the blueprint and structure &nbsp;|&nbsp;
+  <strong>React</strong> = the rooms and furniture &nbsp;|&nbsp;
+  <strong>Tailwind</strong> = the paint and decoration &nbsp;|&nbsp;
+  <strong>Supabase</strong> = the storage room &nbsp;|&nbsp;
+  <strong>Vercel</strong> = the address (makes it accessible online)
+</div>
+
+<!-- 3. ARCHITECTURE -->
+<h2>3. Architecture — How the App Is Structured</h2>
+
+<div class="card">
+  <h3>Frontend (What the User Sees)</h3>
+  <ul>
+    <li>Built with <strong>Next.js App Router</strong> — each folder inside <code>app/</code> becomes a URL page</li>
+    <li>Components (reusable UI pieces) live in the <code>components/</code> folder</li>
+    <li>The Sidebar is a persistent layout component that wraps all pages</li>
+    <li>Pages are <strong>server components</strong> by default — they fetch data on the server before sending HTML to the browser</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Backend (Where Data Lives)</h3>
+  <ul>
+    <li><strong>Supabase</strong> hosts a PostgreSQL database</li>
+    <li>The <code>courses</code> table stores all course records</li>
+    <li>The app connects to Supabase using the official <code>@supabase/supabase-js</code> client library</li>
+    <li>Row Level Security (RLS) controls who can read/write data</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Deployment</h3>
+  <ul>
+    <li>Code runs locally during development with <code>npm run dev</code></li>
+    <li>Deployed to Vercel with <code>vercel --prod</code> command</li>
+    <li>Sensitive keys (Supabase URL and API key) are stored as <strong>Environment Variables</strong> in Vercel — never hardcoded in code</li>
+  </ul>
+</div>
+
+<!-- 4. DATA FLOW -->
+<div class="page-break"></div>
+<h2>4. Data Flow — Step by Step</h2>
+<p>This is how data travels from the database to what you see on screen:</p>
+
+<div class="flow-step">
+  <div class="flow-num">1</div>
+  <div class="flow-content">
+    <strong>User opens the website</strong>
+    <span>The browser sends a request to Vercel's servers for the Dashboard page.</span>
+  </div>
+</div>
+<div class="flow-step">
+  <div class="flow-num">2</div>
+  <div class="flow-content">
+    <strong>Next.js Server Component runs</strong>
+    <span>The <code>page.tsx</code> file on the server executes. It calls Supabase using the secret API key.</span>
+  </div>
+</div>
+<div class="flow-step">
+  <div class="flow-num">3</div>
+  <div class="flow-content">
+    <strong>Supabase returns course data</strong>
+    <span>The database sends back a list of courses as JSON: <code>[{ title: "React", progress: 65 }, ...]</code></span>
+  </div>
+</div>
+<div class="flow-step">
+  <div class="flow-num">4</div>
+  <div class="flow-content">
+    <strong>Next.js builds the HTML</strong>
+    <span>The server renders the BentoGrid component with the real course data injected into it.</span>
+  </div>
+</div>
+<div class="flow-step">
+  <div class="flow-num">5</div>
+  <div class="flow-content">
+    <strong>Browser receives ready-made HTML</strong>
+    <span>The page loads instantly with data already in it. No loading spinner for the main content.</span>
+  </div>
+</div>
+<div class="flow-step">
+  <div class="flow-num">6</div>
+  <div class="flow-content">
+    <strong>Framer Motion animates the cards</strong>
+    <span>Once the page is on screen, React and Framer Motion add animations — cards fade in, progress bars fill up.</span>
+  </div>
+</div>
+
+<div class="highlight">
+  <strong>Key concept — Server vs Client components:</strong><br/>
+  Server components (default) fetch data and render HTML on the server — fast and secure.<br/>
+  Client components (marked with <code>"use client"</code>) run in the browser — needed for animations, hover effects, and interactivity like the sidebar toggle.
+</div>
+
+<!-- 5. DATABASE -->
+<h2>5. Database — Supabase / PostgreSQL</h2>
+
+<h3>The courses table</h3>
+<table>
+  <tr><th>Column</th><th>Type</th><th>What It Stores</th></tr>
+  <tr><td>id</td><td>UUID</td><td>Unique identifier for each course (auto-generated)</td></tr>
+  <tr><td>title</td><td>Text</td><td>Course name e.g. "React Fundamentals"</td></tr>
+  <tr><td>progress</td><td>Integer</td><td>Completion percentage (0–100)</td></tr>
+  <tr><td>icon_name</td><td>Text</td><td>Icon key e.g. "code", "brain" — mapped to a Lucide icon</td></tr>
+  <tr><td>created_at</td><td>Timestamp</td><td>When the course was added</td></tr>
+</table>
+
+<h3>Row Level Security (RLS)</h3>
+<p>
+  Supabase has a security feature called RLS that blocks all database access by default.
+  A <strong>policy</strong> was created to allow public (anonymous) users to <strong>read</strong> the courses table.
+  This means anyone can view courses but no one can delete or modify them from the frontend.
+</p>
+
+<!-- 6. FILE STRUCTURE -->
+<div class="page-break"></div>
+<h2>6. File Structure — What Each File Does</h2>
+
+<pre style="background:#f5f3ff; padding:16px; border-radius:8px; font-size:12.5px; line-height:1.9; overflow-x:auto;">
+studentDashboard/
+│
+├── app/                        ← All pages (Next.js App Router)
+│   ├── layout.tsx              ← Root layout — adds Sidebar to every page
+│   ├── page.tsx                ← Dashboard home page (/)
+│   ├── courses/page.tsx        ← Courses list page (/courses)
+│   ├── progress/page.tsx       ← Progress stats page (/progress)
+│   ├── projects/page.tsx       ← Portfolio projects page (/projects)
+│   ├── schedule/page.tsx       ← Weekly schedule page (/schedule)
+│   ├── settings/page.tsx       ← User settings page (/settings)
+│   ├── profile/page.tsx        ← Profile + activity logs (/profile)
+│   ├── loading.tsx             ← Skeleton shown while data loads
+│   ├── error.tsx               ← Error boundary with "Try Again" button
+│   └── globals.css             ← Global styles and CSS variables
+│
+├── components/                 ← Reusable UI components
+│   ├── Sidebar.tsx             ← Navigation sidebar (desktop + mobile)
+│   ├── BentoGrid.tsx           ← Main grid layout for Dashboard
+│   ├── HeroTile.tsx            ← Greeting card with streak tracker
+│   ├── CourseTile.tsx          ← Individual course card
+│   ├── ActivityTile.tsx        ← Study activity contribution graph
+│   ├── ProgressBar.tsx         ← Animated progress bar
+│   └── SkeletonTile.tsx        ← Loading placeholder card
+│
+├── lib/
+│   ├── supabase.ts             ← Supabase client setup (reads env vars)
+│   └── types.ts                ← TypeScript interfaces (Course type)
+│
+├── utils/
+│   └── iconMap.ts              ← Maps icon_name string to Lucide icon
+│
+├── .env.local                  ← Local environment variables (not committed)
+├── next.config.ts              ← Next.js configuration
+├── tailwind.config             ← Tailwind CSS configuration
+└── package.json                ← Project dependencies list
+</pre>
+
+<!-- 7. KEY FEATURES -->
+<h2>7. Key Features to Highlight</h2>
+
+<div class="card">
+  <h3>Bento Grid Layout</h3>
+  <p>The dashboard uses a CSS Grid with unequal column sizes (<code>2fr 1fr 1fr</code>) creating a magazine-style layout called a "bento grid". It's fully responsive — stacks into a single column on mobile.</p>
+</div>
+
+<div class="card">
+  <h3>Server-Side Rendering (SSR)</h3>
+  <p>Data is fetched on the server before the page is sent to the user. This means no flickering or loading spinners for content — the page arrives ready with real data. <code>revalidate = 0</code> ensures data is always fresh.</p>
+</div>
+
+<div class="card">
+  <h3>Suspense + Skeleton Loading</h3>
+  <p>While the server fetches data, React's <code>Suspense</code> component shows a skeleton placeholder (grey animated boxes). This gives instant visual feedback while data loads.</p>
+</div>
+
+<div class="card">
+  <h3>Error Boundary</h3>
+  <p>If the database fetch fails, the <code>error.tsx</code> file catches the error and shows a friendly "Something went wrong" screen with a "Try Again" button — instead of crashing the whole app.</p>
+</div>
+
+<div class="card">
+  <h3>Framer Motion Animations</h3>
+  <p>The course cards animate in one by one (<code>staggerChildren: 0.1</code> delay), fading up from below. Progress bars count up from 0% to the real value with an easing animation.</p>
+</div>
+
+<div class="card">
+  <h3>Responsive Sidebar</h3>
+  <p>On desktop: a collapsible icon sidebar on the left. On mobile: a bottom navigation bar (like a phone app). Uses Tailwind responsive prefixes like <code>md:hidden</code> to switch between the two.</p>
+</div>
+
+<!-- 8. INTERVIEW Q&A -->
+<div class="page-break"></div>
+<h2>8. Common Interview Questions &amp; Answers</h2>
+
+<div class="qa-block">
+  <div class="q">Q: What is Next.js and why did you use it?</div>
+  <div class="a">A: Next.js is a framework built on top of React that adds server-side rendering, file-based routing, and optimizations out of the box. I used it because it lets me fetch data on the server (making the app faster), and each file inside the <code>app/</code> folder automatically becomes a page URL without any extra configuration.</div>
+</div>
+
+<div class="qa-block">
+  <div class="q">Q: What is Supabase?</div>
+  <div class="a">A: Supabase is an open-source backend service that provides a PostgreSQL database, authentication, and REST/real-time APIs. I used it to store course data — it was quick to set up and provides a dashboard to manage data without writing backend server code.</div>
+</div>
+
+<div class="qa-block">
+  <div class="q">Q: What is the difference between server and client components in Next.js?</div>
+  <div class="a">A: Server components run on the server and can fetch data directly from a database. They produce pure HTML sent to the browser — fast and secure. Client components (marked with "use client") run in the browser and are needed for user interactions like clicks, animations, and state changes. In this project, data-fetching pages are server components while the Sidebar and animations are client components.</div>
+</div>
+
+<div class="qa-block">
+  <div class="q">Q: What are environment variables and why are they important?</div>
+  <div class="a">A: Environment variables are configuration values stored outside the code — like passwords or API keys. I stored the Supabase URL and API key as environment variables so they are never visible in the GitHub repository. In production, they're stored securely in Vercel's settings panel.</div>
+</div>
+
+<div class="qa-block">
+  <div class="q">Q: What is Row Level Security (RLS) in Supabase?</div>
+  <div class="a">A: RLS is a Supabase security feature that blocks all database access by default. You create "policies" to define who can do what. In this project, I created a policy that allows any anonymous user to read (SELECT) the courses table, but they cannot modify or delete data.</div>
+</div>
+
+<div class="qa-block">
+  <div class="q">Q: How is the app deployed?</div>
+  <div class="a">A: The app is deployed on Vercel. I connected the project using the Vercel CLI and run <code>vercel --prod</code> to deploy. Vercel builds the Next.js app, hosts it on a global CDN, and provides a live URL. It also securely stores environment variables used in production.</div>
+</div>
+
+<div class="qa-block">
+  <div class="q">Q: What is TypeScript and why use it?</div>
+  <div class="a">A: TypeScript is JavaScript with added type safety. For example, I defined a <code>Course</code> interface that says every course object must have an id, title, progress, icon_name, and created_at. If I accidentally try to use a field that doesn't exist, TypeScript shows an error before the app even runs — catching bugs early.</div>
+</div>
+
+<div class="qa-block">
+  <div class="q">Q: How does Tailwind CSS work?</div>
+  <div class="a">A: Tailwind provides hundreds of utility classes like <code>text-white</code>, <code>p-4</code>, <code>rounded-xl</code>, <code>flex</code> that you apply directly in your HTML/JSX. Instead of writing separate CSS files, you style components inline using these class names. Tailwind generates only the CSS you actually use, keeping the file size small.</div>
+</div>
+
+<div class="qa-block">
+  <div class="q">Q: What challenges did you face?</div>
+  <div class="a">A: A key challenge was the Supabase API key — the project initially used an outdated key so the database returned "Invalid API key" errors. I debugged this by testing the Supabase REST API directly with curl, identified the wrong key, and replaced it with the correct Legacy anon key from the Supabase dashboard. I also had to configure Row Level Security to allow public reads.</div>
+</div>
+
+<!-- 9. GLOSSARY -->
+<h2>9. Quick Glossary</h2>
+
+<table>
+  <tr><th>Term</th><th>Simple Meaning</th></tr>
+  <tr><td>API</td><td>A way for two systems to talk to each other. Supabase's API lets the app ask for data.</td></tr>
+  <tr><td>JSON</td><td>A text format used to send data. Looks like: <code>{ "title": "React", "progress": 65 }</code></td></tr>
+  <tr><td>Component</td><td>A reusable piece of UI. Like a LEGO brick — build once, use many times.</td></tr>
+  <tr><td>SSR</td><td>Server-Side Rendering — the server builds the HTML page before sending it to the browser.</td></tr>
+  <tr><td>CDN</td><td>Content Delivery Network — servers spread around the world that serve your app fast to anyone.</td></tr>
+  <tr><td>UUID</td><td>Universally Unique ID — a long random string that uniquely identifies each database row.</td></tr>
+  <tr><td>PostgreSQL</td><td>A powerful, open-source relational database. Like Excel but for servers.</td></tr>
+  <tr><td>RLS</td><td>Row Level Security — database rules that control who can access which rows.</td></tr>
+  <tr><td>npm</td><td>Node Package Manager — installs third-party libraries like Framer Motion and Supabase.</td></tr>
+  <tr><td>Routing</td><td>Deciding which page to show based on the URL. <code>/courses</code> shows the Courses page.</td></tr>
+  <tr><td>State</td><td>Data that a component remembers and can change — like whether the sidebar is expanded.</td></tr>
+  <tr><td>Deployment</td><td>Publishing the app to the internet so anyone with the link can access it.</td></tr>
+</table>
+
+<!-- 10. ONE PAGER SUMMARY -->
+<div class="page-break"></div>
+<h2>10. One-Page Summary — Say This In The Interview</h2>
+
+<div class="highlight" style="font-size:13.5px; line-height:1.9;">
+  <p>"I built a <strong>Student Learning Dashboard</strong> — a full-stack web application where a student can track their course progress, view their study activity, manage a weekly schedule, and browse their project portfolio."</p>
+  <br/>
+  <p>"For the <strong>frontend</strong>, I used <strong>Next.js 16</strong> with the App Router. Each page is a folder inside the <code>app/</code> directory. I used <strong>React</strong> to build reusable components like course cards and a sidebar. Styling was done with <strong>Tailwind CSS</strong>, and animations were added using <strong>Framer Motion</strong>."</p>
+  <br/>
+  <p>"For the <strong>backend and database</strong>, I used <strong>Supabase</strong>, which provides a PostgreSQL database. It stores course data — the title, progress percentage, and icon. I connected to it using the Supabase JavaScript SDK and secured it with Row Level Security policies."</p>
+  <br/>
+  <p>"I used <strong>TypeScript</strong> throughout for type safety — for example, defining a <code>Course</code> interface to ensure every course object has the correct fields."</p>
+  <br/>
+  <p>"The data flow is: the user opens the app → Next.js server fetches courses from Supabase → renders the HTML with real data → sends it to the browser → Framer Motion animates the UI. This is called <strong>Server-Side Rendering</strong>, which makes the app fast because data is ready before the page loads."</p>
+  <br/>
+  <p>"The app is <strong>deployed on Vercel</strong>, available at <em>student-dashboard-murex-ten.vercel.app</em>. Environment variables keep the Supabase API keys secure."</p>
+</div>
+
+<div class="footer">
+  Student Learning Dashboard · Tejaswini Pagadala · Built with Next.js, Supabase, Tailwind CSS, Framer Motion · Hosted on Vercel<br/>
+  <strong>To save as PDF:</strong> Open this file in Chrome → Press Ctrl+P → Change destination to "Save as PDF" → Save
+</div>
+
+</body>
+</html>
